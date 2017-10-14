@@ -9,38 +9,66 @@
 
     <link rel="apple-touch-icon" href="../assets/images/icon.png">
     <link rel="shortcut icon" type="image/png" href="../assets/images/favicon.ico"/>
+
+    <style>
+        input:invalid{
+            border-color: #900;
+            background-color: #FDD;
+        }
+    </style>
 </head>
 <body>
 
     <h2>Formularz osobowy: </h2>
 
-    <form>
+    <form method="post" autocomplete="on">
         <div>
-            <label for="name">Imię:</label>
+            <label for="name">Imię:</label> <br/>
             <input id="name" type="text" name="name" autofocus>
+            (text)
         </div>
 
         <div>
-            <label for="lastName">Nazwisko: <abbr title="required">*</abbr></label>
+            <label for="lastName">Nazwisko: <abbr title="required">*</abbr></label> <br/>
             <input id="lastName" type="text" name="lastName">
+            (text)
         </div>
 
         <div>
-            <label for="birthdayMonth">Miesiąc urodzin:</label>
-            <input id="birthdayMonth" type="text" name="birthdayMonth">
+            <label for="birthdayMonth">Miesiąc urodzin:</label><br/>
+            <input id="birthdayMonth" list="months" name="birthdayMonth">
+            (miesiąc z listy)
         </div>
+        <datalist id="months">
+            <option value="Styczeń">
+            <option value="Luty">
+            <option value="Marzec">
+            <option value="Maj">
+            <option value="czerwiec">
+            <option value="lipiec">
+            <option value="sierpien">
+            <option value="wrzesien">
+            <option value="pazdziernik">
+            <option value="listopad">
+            <option value="grudzien">
+        </datalist>
 
         <div>
-            <label for="email">Adres mailowy: <abbr title="required">*</abbr></label>
+            <label for="email">Adres mailowy: <abbr title="required">*</abbr></label><br/>
             <input id="email" type="email" name="email">
+            (email)
         </div>
 
         <div>
-            <label for="tel">Telefon:</label>
-            <input id="tel" type="tel" name="tel">
+            <label for="tel">Telefon:</label><br/>
+            <input id="tel" type="tel" pattern="[0-9]{9}" name="tel">
+            (numer)
         </div>
 
+        <button>submit</button>
     </form>
+
+    <a href="register_more_info.html">podaj wiecej danych</a>
 
 </body>
 </html>

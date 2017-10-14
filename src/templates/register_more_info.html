@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Zarejestruj się - wiecej danych</title>
+
+    <meta name="description" content="aplikacja dla studenta, zarejestruj sie, wiecej danych">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="../assets/images/icon.png">
+    <link rel="shortcut icon" type="image/png" href="../assets/images/favicon.ico"/>
+
+    <style>
+        input:invalid{
+            border-color: #900;
+            background-color: #FDD;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Formularz osobowy: </h2>
+
+    <form method="post" autocomplete="on">
+        <div>
+            <label for="moreInfo">Napisz wiecej o sobie:</label> <br/>
+            <textarea id="moreInfo" placeholder="opis" name="moreInfo"></textarea>
+            (text)
+        </div>
+
+        <div>
+            <label for="favColor">Ulubiony kolor:</label> <br/>
+            <input id="favColor" type="color" name="favColor">
+            (kolor)
+        </div>
+
+        <div>
+            <label for="monthBirth">Miesiąc i rok urodzenia:</label><br/>
+            <input id="monthBirth" type="month" name="monthBirth">
+            (miesiąc i rok)
+        </div>
+
+        <div>
+            <label for="range">Zakres godzin:</label><br/>
+            <input id="range" type="range" min="0" max="23" name="range">
+            (zakres godzin)
+        </div>
+
+        <div>
+            <label for="search">Wyszukaj tekst:</label><br/>
+            <input id="search" type="search" name="search">
+            (tekst)
+        </div>
+
+        <div>
+            <label for="url">Wpisz url</label><br/>
+            <input id="url" type="url" name="url">
+            (url)
+        </div>
+
+        <button>submit</button>
+    </form>
+
+
+</body>
+</html>
