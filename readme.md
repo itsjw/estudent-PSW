@@ -11,3 +11,5 @@ lista 1 zagadnienia:
     2. input z typem date w różnych przeglądarkach udostępnia inny interfejs
         - https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date#Browser_compatibility //yyyy-mm-dd
     3. atrybut placeholder mozna nałożyć na takie elementy jak text, search, tel, url oraz email
+
+edytor: Webstorm
