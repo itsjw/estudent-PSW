@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Fascinate+Inline');
+
 section {
     border-bottom: 2px dotted black;
     padding-bottom: 20px;
@@ -24,7 +26,10 @@ section:last-of-type {
 }
 
 body {
+    margin: 20px 0;
+    position: relative;
     background-color: #FFDDDD;
+    box-sizing: border-box;
 }
 
 .backgrounds > div {
@@ -165,5 +170,165 @@ tfoot th {
     .container {
         width: 90%;
         margin: 0 5%;
+    }
+}
+
+.text-shadow {
+    text-shadow: 1px 1px 2px blueviolet;
+}
+
+.text-rgba {
+    color: rgba(255, 0, 0, 0.3);
+}
+
+.text-hsla {
+    color:  hsla(170, 50%, 45%, 1);
+}
+
+.box-shadow {
+    margin: 30px auto;
+    width: 200px;
+    height: 200px;
+    background: lightgreen;
+    box-shadow: 60px -16px teal;
+}
+
+.gradients > div {
+    height: 300px;
+    width: calc(47% - 100px);
+    display: inline-block;
+}
+
+.linear-gradient {
+    border: 50px solid transparent;
+    background: linear-gradient(70deg, blue, pink);
+    border-image: url("https://mdn.mozillademos.org/files/4127/border.png") 27 repeat;
+}
+
+.radial-gradient {
+    border: 50px solid;
+    border-image: linear-gradient(red, yellow) 10;
+    background: radial-gradient(red, blue);
+}
+
+@keyframes slidein {
+    from {
+        margin-left: 100%;
+        width: 300%;
+    }
+
+    to {
+        margin-left: 0%;
+        width: 100%;
+    }
+}
+
+.animations {
+    overflow: hidden;
+}
+
+.transitions {
+    display: block;
+}
+
+.animations > p {
+    overflow: hidden;
+    animation-duration: 3s;
+    animation-name: slidein;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+
+.box {
+    display: block;
+    border-style: solid;
+    border-width: 1px;
+    display: block;
+    width: 100px;
+    height: 100px;
+    background-color: #0000FF;
+    -webkit-transition: width 2s, height 2s, background-color 2s, -webkit-transform 2s;
+    transition: width 2s, height 2s, background-color 2s, transform 2s;
+}
+
+.box:hover {
+    display: block;
+    background-color: #FFCCCC;
+    width: 200px;
+    height: 200px;
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.transitions {
+    padding-bottom: 200px;
+}
+.transitions img {
+    position:absolute;
+    left:0;
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+}
+
+.transitions img.top:hover {
+    opacity:0;
+}
+
+.font-google {
+    font-family: 'Fascinate Inline', cursive;
+}
+
+.flex-container {
+    margin: auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    background-color: #eee;
+    max-width: 800px;
+}
+
+.col {
+    flex: 1;
+    text-align: center;
+    transition: .3s;
+    max-width: 25%;
+    padding: 8em 0;
+    background-color: #ccc;
+    min-width: 10%;
+    border: 1px solid black;
+}
+
+.col:hover{
+    transition: .5s;
+    max-width: 40% !important;
+    background: #333;
+    flex-grow: 2;
+    cursor: pointer;
+    color: #7c60a2;
+}
+
+.col:last-of-type {
+    border: none;
+}
+
+.newspaper {
+    column-count: 3;
+    column-gap: 25px;
+    column-rule: solid 8px;
+}
+
+@media(max-width: 1024px) {
+    .flex-container {
+        flex-flow: row wrap;
+    }
+    .col {
+        flex-basis: 200%;
+        max-width: 40%;
+    }
+    .col:hover {
+        max-width: 50%!important;
     }
 }
