@@ -1,0 +1,56 @@
+form {
+    padding: 0 20px;
+}
+form > div {
+    margin: 10px 0;
+}
+
+a:link { color: blue } /* unvisited links */
+a:visited { color: purple } /* visited links */
+a:hover { font-weight: bold } /* user hovers */
+a:active { color: lime } /* active links */
+
+input[type=checkbox]:checked + label{
+    color: green!important;
+    font-style: italic;
+}
+
+input[type=checkbox]:disabled + label{
+    color: lightgrey;
+}
+
+input[type=checkbox]:enabled+ label{
+    color: darkblue;
+}
+
+.empty:empty {
+    width: 20px;
+    height: 20px;
+    background: red;
+}
+
+form input[type=text]:first-child {
+    background: darkgrey;
+}
+
+input:focus {
+    border: 2px solid blue;
+}
+
+input[type=text]:last-child {
+    background: lightcoral;
+}
+
+label:not(#specialLabel) {
+    color: darkolivegreen;
+}
+
+form div:nth-child(3n) {
+    border: 2px solid black;
+    /*color: blueviolet!important;*/
+}
+
+input:invalid{
+    border-color: #900;
+    background-color: #FDD;
+}

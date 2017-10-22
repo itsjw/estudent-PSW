@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Test css</title>
+
+    <meta name="description" content="aplikacja dla studenta, test css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="../assets/images/icon.png">
+    <link rel="shortcut icon" type="image/png" href="../assets/images/favicon.ico"/>
+
+    <link rel="stylesheet" href="../styles/css_test.css"> <!--3 sposob-->
+    <style> /*1 sposob*/
+        #elementID1 {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <section class="different-styles">
+        <h2>Różne możliwości osadzania reguł CSS na stronie oraz różne wielkości tesktu:</h2>
+        <a id="elementID1">element 1</a> <br/>
+        <a id="elementID2" style="color: blue">element 2</a> <!--2 sposob--> <br/>
+        <a id="elementID3">element 3</a> <br/>
+        <a id="elementID4">element 4</a> <br/>
+    </section>
+
+    <section class="backgrounds">
+        <h2>Różne rodzaje tła:</h2>
+        <div id="background1"></div>
+        <div id="background2"></div>
+        <div id="background3"></div>
+        <div id="background4"></div>
+    </section>
+
+    <section class="selectors">
+        <h2>Różne sposoby definiowania selektorów CSS:</h2>
+        <p id="selector1">identyfikator</p>
+        <p class="selector2">klasa</p>
+        <p class="selector3">zagniezdzony paragraf w klasie selectors</p>
+        <p class="selector4">paragraf bedacy dzieckiem klasy selectors</p>
+    </section>
+
+    <section class="box-model">
+        <h2>Właściwości box model:</h2>
+        <div class="outer-div">
+            <p>outer div</p>
+            <div class="inside-div">
+                <p>inside div</p>
+            </div>
+        </div>
+        <div class="right-div">
+            <p>right div</p>
+        </div>
+        <div class="fixed-div">
+            <p>fixed div</p>
+        </div>
+        <p class="clear-both"></p>
+        <div class="under-div">
+            <p>under div</p>
+        </div>
+    </section>
+
+    <section class="text-formats">
+        <h2>Różne sposoby formatowania tekstu:</h2>
+        <p class="text1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis egestas mattis auctor. Nam non interdum nulla, mattis euismod nunc. Sed in lacus sed nulla iaculis cursus.</p>
+        <p class="text2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis egestas mattis auctor. Nam non interdum nulla, mattis euismod nunc. Sed in lacus sed nulla iaculis cursus.</p>
+        <p class="text3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis egestas mattis auctor. Nam non interdum nulla, mattis euismod nunc. Sed in lacus sed nulla iaculis cursus.</p>
+    </section>
+
+    <section class="tables">
+        <h2>Różne możliwości stylowania tabel:</h2>
+        <table>
+            <thead>
+            <tr>
+                <th colspan="4">Header</th >
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>a</td>
+                <td>b</td>
+                <td>c</td>
+                <td rowspan="4">d</td>
+            </tr>
+            <tr>
+                <td>a</td>
+                <td>b</td>
+                <td>c</td>
+            </tr>
+            <tr>
+                <td colspan="2">a,b</td>
+                <td rowspan="2">c</td>
+            </tr>
+            <tr>
+                <td>a</td>
+                <td>b</td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <th colspan="4">Footer</th>
+            </tr>
+            </tfoot>
+        </table>    </section>
+
+    <section class="media">
+        <h2>Zastosowanie reguły @media</h2>
+        <div class="container"></div>
+    </section>
+
+</body>
+</html>

@@ -10,20 +10,17 @@
     <link rel="apple-touch-icon" href="../assets/images/icon.png">
     <link rel="shortcut icon" type="image/png" href="../assets/images/favicon.ico"/>
 
-    <style>
-        input:invalid{
-            border-color: #900;
-            background-color: #FDD;
-        }
-    </style>
+    <link rel="stylesheet" href="../styles/register.css">
 </head>
 <body>
+
+    <a href="https://google.pl" > GOOGLE LINK</a>
 
     <h2>Formularz osobowy: </h2>
 
     <form method="post" autocomplete="on">
         <div>
-            <label for="name">Imię:</label> <br/>
+            <label id="specialLabel" for="name">Imię:</label> <br/>
             <input id="name" type="text" name="name" autofocus>
             (text)
         </div>
@@ -65,10 +62,60 @@
             (numer)
         </div>
 
-        <button>submit</button>
+        <div>
+            <label>
+                <input name="nazwa1" type="text"/>
+            </label>
+            <label>
+                <input name="nazwa2" type="text"/>
+            </label>
+        </div>
+
+        <div>
+            <select name="select" title="select">
+                <option value="wartosc1">opcja1</option>
+                <option value="wartosc2" selected>opcja2</option>
+                <option value="wartosc3">opcja3</option>
+            </select>
+        </div>
+
+        <div>
+            <input type="radio" id="radio1"
+                   name="radio" value="radio1" checked>
+            <label for="radio1">radio1</label>
+
+            <input type="radio" id="radio2"
+                   name="radio" value="radio2">
+            <label for="radio2">radio2</label>
+
+            <input type="radio" id="radio3"
+                   name="radio" value="radio3">
+            <label for="radio3">radio3</label>
+        </div>
+
+        <div>
+            <input type="checkbox" id="checkbox1" name="checkbox" value="checkbox1" disabled>
+            <label for="checkbox1">checkbox1</label>
+
+            <input type="checkbox" id="checkbox2" name="checkbox" value="checkbox2">
+            <label for="checkbox2">checkbox2</label>
+
+            <input type="checkbox" id="checkbox3" name="checkbox" value="checkbox3">
+            <label for="checkbox3">checkbox3</label>
+        </div>
+
+        <textarea name="textarea" rows="10" cols="50" maxlength="200" title="textarea">wpisz tekst</textarea>
+
+        <div>
+            <button type="submit" value="Submit">Submit</button>
+            <button type="reset" value="Reset">Reset</button>
+        </div>
     </form>
 
     <a href="register_more_info.html">podaj wiecej danych</a>
+
+    <p>empty:</p>
+    <div class="empty"></div>
 
 </body>
 </html>

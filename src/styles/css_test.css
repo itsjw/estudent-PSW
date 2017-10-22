@@ -1,0 +1,169 @@
+section {
+    border-bottom: 2px dotted black;
+    padding-bottom: 20px;
+}
+section:last-of-type {
+    border: none;
+}
+
+#elementID1 {
+    font-size: 2em;
+}
+
+#elementID2 {
+    font-size: 22pt;
+}
+
+#elementID3 {
+    color: green;
+    font-size: 24px;
+}
+
+#elementID4 {
+    font-size: 120%;
+}
+
+body {
+    background-color: #FFDDDD;
+}
+
+.backgrounds > div {
+    display: inline-block;
+    width: 47%;
+    margin: 1%;
+    height: 350px;
+    background: green;
+}
+
+#background1 {
+    background-image: url('../assets/images/tile-wide.png');
+}
+
+#background2 {
+    background: url('../assets/images/tile-wide.png') center;
+}
+
+#background3 {
+    background: url('../assets/images/tile-wide.png') fixed;
+}
+
+#background4 {
+    background: url('../assets/images/tile-wide.png') no-repeat;
+}
+
+#selector1 {
+    color: red;
+}
+
+.selector2 {
+    color: blue;
+}
+
+.selectors .selector3 {
+    color: green;
+}
+
+.selectors > .selector4 {
+    color: purple;
+}
+
+
+.box-model > div {
+    width: 200px;
+    height: 200px;
+}
+
+.outer-div {
+    background: gray;
+    margin: 20px;
+    padding: 50px;
+    float: left;
+    position: relative;
+}
+
+.inside-div {
+    color: white;
+    background: black;
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.right-div {
+    background: goldenrod;
+    position: static;
+    float: left;
+}
+
+.fixed-div {
+    background: greenyellow;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50px!important;
+    height: 50px!important;
+}
+
+.clear-both {
+    clear: both;
+}
+
+.under-div {
+    background: teal;
+}
+
+.text1 {
+    font-weight: 700;
+    font-style: italic;
+    font-variant: historical-forms;
+}
+
+.text2 {
+    font-variant: all-petite-caps;
+}
+
+.text3 {
+    line-height: 2.5;
+    font-family: "DejaVu Sans Mono";
+}
+
+
+.container {
+    border-radius: 20px;
+    background: lightgrey;
+    height: 300px;
+    width: 70%;
+    margin: 0 15%;
+}
+
+table {
+    margin: auto;
+    font-size: 25px;
+    min-width: 500px;
+    border: 5px solid darkgrey;
+    padding: 5px;
+}
+
+td {
+    border: 1px solid black;
+    padding: 20px;
+    text-align: center;
+}
+
+thead th {
+    border: 3px dashed cornflowerblue;
+    padding-bottom: 10px;
+}
+
+tfoot th {
+    padding-top: 10px;
+    border: 3px dashed darkolivegreen;
+}
+
+@media (max-width: 1024px) {
+    .container {
+        width: 90%;
+        margin: 0 5%;
+    }
+}

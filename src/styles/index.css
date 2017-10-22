@@ -1,0 +1,74 @@
+body {
+    padding: 0;
+    min-height: 2000px;
+    margin: 50px 0 0;
+}
+
+.menu {
+    top: 0;
+    position: fixed;
+    background: lightgrey;
+    border-radius: 15px;
+    width: calc(100% - 40px);
+    margin: 5px 20px;
+}
+
+.menu a {
+    color: black;
+}
+
+a {
+    text-decoration: none;
+}
+
+.menu ul li {
+    cursor: pointer;
+}
+
+.menu ul {
+    list-style-type:none;
+    padding:0;
+    margin:0;
+    font-size:18px;
+    text-align:center;
+}
+
+.menu > ul > li {
+    display: inline-block;
+    border: 1px solid black;
+    height:2em;
+    line-height:2em;
+}
+
+.menu > ul > li > ul, .menu > ul > li > ul > li > ul {
+    display: none;
+}
+
+.menu > ul > li:hover {
+    background: yellowgreen;
+}
+
+.menu > ul > li:hover > ul, .menu > ul > li:hover > ul > li:hover > ul {
+    display:block;
+    background: lightgrey;
+    border: 1px solid black;
+}
+
+.menu > ul > li > ul, .menu > ul > li > ul > li > ul {
+    position: absolute;
+}
+
+.menu > ul > li > ul > li > ul{
+    left: 100%;
+    width: 100%;
+    margin-top: -41px;
+}
+
+.menu > ul > li > ul > li, .menu > ul > li > ul > li > ul > li {
+    padding: 5px 10px;
+}
+
+.menu > ul > li > ul > li:hover, .menu > ul > li > ul > li > ul > li:hover {
+    background: yellowgreen;
+    padding: 5px 10px;
+}
