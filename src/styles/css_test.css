@@ -211,6 +211,12 @@ tfoot th {
     background: radial-gradient(red, blue);
 }
 
+.border-slice {
+    background: blueviolet;
+    border-color: #0000FF;
+    border-image-slice: 7 12 14 5;
+}
+
 @keyframes slidein {
     from {
         margin-left: 100%;

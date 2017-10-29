@@ -12,4 +12,4 @@ lista 1 zagadnienia:
         - https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date#Browser_compatibility //yyyy-mm-dd
     3. atrybut placeholder mozna nałożyć na takie elementy jak text, search, tel, url oraz email
 
-edytor: Webstorm
+edytor: Webstorm + wsparcie w przegladarce DEV_TOOLS Chromium
