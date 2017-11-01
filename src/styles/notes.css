@@ -1,0 +1,35 @@
+body {
+    margin: 50px 20px 20px;
+}
+
+.counter {
+    text-align: right;
+}
+
+.noteForm {
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 20px;
+    text-align: center;
+}
+
+#notes-list {
+    padding: 20px;
+}
+
+#notes-list > div {
+    position: relative;
+    display: block;
+    padding: 10px;
+    border-bottom: 2px dashed lightcyan;
+}
+
+#notes-list > div > span {
+    display: block;
+}
+
+#date {
+    position: absolute;
+    right: 0;
+    top: 5px;
+}

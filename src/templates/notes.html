@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Notatki</title>
+    <meta name="keywords" content="nowy wpis">
+    <meta name="description" content="aplikacja dla studenta, nowy wpis">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="../assets/images/icon.png">
+    <link rel="shortcut icon" type="image/png" href="../assets/images/favicon.ico"/>
+
+    <link rel="stylesheet" href="../styles/menu.css"/>
+    <link rel="stylesheet" href="../styles/notes.css"/>
+
+    <script type="text/javascript" src="../scripts/notes.js"></script>
+</head>
+<body>
+
+<nav class="menu">
+    <ul>
+        <li>
+            Podstrony
+            <ul>
+                <li><a href="../templates/home.html">Strona Główna</a></li>
+                <li><a href="../templates/about.html">O Nas</a></li>
+                <li>Podstrony ->
+                    <ul>
+                        <li><a href="../templates/home.html">Strona Główna</a></li>
+                        <li><a href="../templates/about.html">O Nas</a></li>
+                        <li><a href="../templates/register.html">Zarejestruj</a></li>
+                        <li><a href="../templates/css_test.html">CSS</a></li>
+                    </ul>
+                </li>
+                <li><a href="../templates/css_test.html">CSS</a></li>
+                <li><a href="../templates/notes.html">notatki</a></li>
+            </ul>
+        </li>
+        <li>Costam1</li>
+        <li>Costam2
+            <ul>
+                <li><a href="../templates/about.html">O Nas</a></li>
+                <li><a href="../templates/about.html">O Nas</a></li>
+                <li>Podstrony ->
+                    <ul>
+                        <li><a href="../templates/home.html">Strona Główna</a></li>
+                        <li><a href="../templates/about.html">O Nas</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>Costam3</li>
+    </ul>
+</nav>
+
+    <div class="counter"><p id="counter"></p></div>
+    <div id="lucky-number"></div>
+
+    <h2>Dodaj notatki:</h2>
+
+    <div class="noteForm">
+        <div>
+            <label for="title">Tytuł:</label> <br/>
+            <input id="title" type="text" name="title" autofocus>
+        </div>
+
+        <div>
+            <label for="content">Zawartosc:</label> <br/>
+            <textarea id="content" name="content" cols="70" rows="10"></textarea>
+        </div>
+
+        <button onclick="submitForm()">Dodaj</button>
+    </div>
+
+    <h2>Notatki: </h2>
+    <div id="notes-list"></div>
+</body>
+</html>
