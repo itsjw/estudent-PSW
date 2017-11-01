@@ -2,6 +2,15 @@ body {
     margin: 50px 20px 20px;
 }
 
+.bright {
+    background: rgba(255, 204, 198, 0.19);
+}
+
+.dark {
+    background: lightgray;
+    color: white;
+}
+
 .counter {
     text-align: right;
 }
@@ -32,4 +41,12 @@ body {
     position: absolute;
     right: 0;
     top: 5px;
+}
+
+.border-red {
+    border: 2px solid red;
+}
+
+.border-green{
+    border: 2px solid green;
 }

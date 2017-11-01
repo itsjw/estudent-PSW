@@ -7,6 +7,7 @@
     var count = 0;
 
     window.submitForm = submitForm;
+    window.enter = enter;
 
     document.writeln("dynamicznie dodany text");
 
@@ -15,8 +16,19 @@
     });
 
     window.onload = function () {
+        window.collections()
         showNotes();
         document.getElementById("lucky-number").innerHTML = "szczesliwy numer to " + parseInt(Math.floor(Math.random() * 100));
+        document.getElementById('submit-form').addEventListener("mousemove", window.mouseOver)
+        document.getElementById('submit-form').addEventListener("mouseleave", window.mouseLeave)
+
+        var form = document.getElementsByClassName("noteForm")[0];
+        form.addEventListener("focus", function( event ) {
+            event.target.style.background = "lightcyan";
+        }, true);
+        form.addEventListener("blur", function( event ) {
+            event.target.style.background = "";
+        }, true);
     };
 
     function submitForm() {
@@ -68,13 +80,26 @@
         $date.id = "date";
         $date.innerHTML = note.date;
 
-        var $content = document.createElement("span");
-        $content.innerHTML = "Zawartość: " + note.content;
+        var $content= document.createTextNode("Zawartość: " + note.content);
 
-        $child.appendChild($title);
-        $child.appendChild($date);
+        var $plug = document.createElement("plug");
+        $plug.innerHTML = "PLUGPLUGPLUGPLUG"
+
+        $title = $child.appendChild($title);
+        $child.insertBefore($plug, $title);
+        $child.replaceChild($date, $plug)
         $child.appendChild($content);
+        $child.appendChild($plug)
+        $child.removeChild($plug)
+
+        $title.parentNode.appendChild(document.createTextNode("."))
+
         $notesList.appendChild($child);
+    }
+
+    function enter(event) {
+        if(event.ctrlKey && event.key === 'Enter')
+            submitForm()
     }
 
 })(window, document);

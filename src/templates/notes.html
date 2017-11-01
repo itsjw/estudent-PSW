@@ -13,16 +13,18 @@
     <link rel="stylesheet" href="../styles/menu.css"/>
     <link rel="stylesheet" href="../styles/notes.css"/>
 
+    <script type="text/javascript" src="../scripts/collections.js"></script>
     <script type="text/javascript" src="../scripts/notes.js"></script>
+    <script type="text/javascript" src="../scripts/style.js"></script>
 </head>
-<body>
+<body class="bright">
 
 <nav class="menu">
     <ul>
         <li>
             Podstrony
             <ul>
-                <li><a href="../templates/home.html">Strona Główna</a></li>
+                <li><a name="strona_glowna" href="../templates/home.html">Strona Główna</a></li>
                 <li><a href="../templates/about.html">O Nas</a></li>
                 <li>Podstrony ->
                     <ul>
@@ -55,8 +57,15 @@
 
     <div class="counter"><p id="counter"></p></div>
     <div id="lucky-number"></div>
+    <div id="collections"></div>
 
-    <h2>Dodaj notatki:</h2>
+    <button onclick="changeStyle()">ZMIEN STYLE</button>
+    <select id="fonts" onchange="changeFont(this)">
+        <option value="Arial">Arial</option>
+        <option value="Times New Roman">New Times Roman</option>
+    </select>
+
+    <h2>Dodaj notatkę:</h2>
 
     <div class="noteForm">
         <div>
@@ -66,10 +75,10 @@
 
         <div>
             <label for="content">Zawartosc:</label> <br/>
-            <textarea id="content" name="content" cols="70" rows="10"></textarea>
+            <textarea onkeypress="enter(event);" id="content" name="content" cols="70" rows="10"></textarea>
         </div>
 
-        <button onclick="submitForm()">Dodaj</button>
+        <button id="submit-form" onclick="submitForm()">Dodaj</button>
     </div>
 
     <h2>Notatki: </h2>
