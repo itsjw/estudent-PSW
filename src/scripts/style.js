@@ -8,7 +8,7 @@ var isBright = true;
 
 function changeStyle() {
     isBright = !isBright;
-    var bodyClasses = document.querySelector('body').classList
+    var bodyClasses = document.querySelector('body').classList;
     if(isBright) {
         bodyClasses.remove('dark');
         bodyClasses.add('bright');
@@ -29,18 +29,18 @@ function mouseOver() {
     var noteFormClass= document.getElementsByClassName('noteForm')[0];
 
     if(!title || !content) {
-        noteFormClass.classList.remove('border-green')
-        noteFormClass.classList.add('border-red')
+        noteFormClass.classList.remove('border-green');
+        noteFormClass.classList.add('border-red');
     } else {
-        noteFormClass.classList.remove('border-red')
-        noteFormClass.classList.add('border-green')
+        noteFormClass.classList.remove('border-red');
+        noteFormClass.classList.add('border-green');
     }
 }
 
 function mouseLeave() {
     var noteFormClass= document.getElementsByClassName('noteForm')[0];
-    noteFormClass.classList.remove('border-red')
-    noteFormClass.classList.remove('border-green')
+    noteFormClass.classList.remove('border-red');
+    noteFormClass.classList.remove('border-green');
 }
 
 function getValueOf(id) {

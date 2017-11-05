@@ -11,8 +11,9 @@
 
     document.writeln("dynamicznie dodany text");
 
-    window.addEventListener("click", function () {
-        document.getElementById("counter").innerHTML = "counter: " + count++;
+    window.addEventListener("click", function (event) {
+        if(event.screenX>-1 && event.screenX<window.screen.width)
+            document.getElementById("counter").innerHTML = "counter: " + ++count;
     });
 
     window.onload = function () {
@@ -104,4 +105,3 @@
 
 })(window, document);
 
-// https://eslint.org/docs/about/ TODO LINER
