@@ -33,7 +33,7 @@
                             </ul>
                         </li>
                         <li><a href="templates/css_test.html">CSS</a></li>
-                        <li><a href="templates/notes.html">notatki</a></li>
+                        <li><a href="templates/notes.php">notatki</a></li>
                     </ul>
                 </li>
                 <li>Costam1</li>
@@ -113,5 +113,31 @@
             </details>
         </div>
 
+        <?php
+        if ($_POST) {
+            echo '<pre>';
+            echo htmlspecialchars(print_r($_POST, true));
+            echo '</pre>';
+        }
+
+        $var = new Directory();
+        $Var = 'Joe';
+        echo "$var, $Var";
+
+        ?>
+
+        <form action="" method="post">
+            Nazwisko: <input type="text" name="personal[nazwisko]"><br />
+            Email: <input type="text" name="personal[email]"><br />
+            Piwo: <br />
+            <select multiple name="piwo[]">
+                <option value="zywiec">Żywiec</option>
+                <option value="tyskie">Tyskie</option>
+                <option value="lech">Lech</option>
+            </select><br />
+            <input type="submit" value="Wyślij mnie!" />
+        </form>
+
     </body>
 </html>
+

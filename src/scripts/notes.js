@@ -7,7 +7,7 @@
     var count = 0;
 
     window.submitForm = submitForm;
-    window.enter = enter;
+    // window.enter = enter;
 
     document.writeln("dynamicznie dodany text");
 
@@ -18,7 +18,7 @@
 
     window.onload = function () {
         window.collections()
-        showNotes();
+        // showNotes();
         document.getElementById("lucky-number").innerHTML = "szczesliwy numer to " + parseInt(Math.floor(Math.random() * 100));
         document.getElementById('submit-form').addEventListener("mousemove", window.mouseOver)
         document.getElementById('submit-form').addEventListener("mouseleave", window.mouseLeave)
@@ -98,10 +98,10 @@
         $notesList.appendChild($child);
     }
 
-    function enter(event) {
-        if(event.ctrlKey && event.key === 'Enter')
-            submitForm()
-    }
+    // function enter(event) {
+    //     if(event.ctrlKey && event.key === 'Enter')
+    //         submitForm()
+    // }
 
 })(window, document);
 
