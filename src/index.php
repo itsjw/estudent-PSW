@@ -8,7 +8,7 @@
     <?php include("scripts.html"); ?>
 </head>
 <body>
-<?php include('menu.html'); ?>
+<?php include('menu.php'); ?>
 
 <section <?php echo "class='section hero is-$theme'"; ?> >
     <div class="hero-body">

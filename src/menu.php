@@ -1,4 +1,6 @@
 <nav class="menu">
+    <?php echo '<p class="welcome">Witaj '.$actualUser->username.'!</p>' ?>
+    <?php echo '<a class="logout" href="php/wyloguj.php">wyloguj</a>' ?>
     <ul>
         <li><a href="index.php">Strona główna</a></li>
         <li><a href="add_note.php">Dodaj notatke</a></li>

@@ -10,7 +10,7 @@
 <body>
 
 <?php include('php/settings-script.php'); ?>
-<?php include('menu.html'); ?>
+<?php include('menu.php'); ?>
 
 <section <?php echo "class='section hero is-$theme'"; ?> >
     <div class="hero-body">

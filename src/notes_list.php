@@ -10,7 +10,7 @@
 <body>
 
 <?php
-include('menu.html');
+include('menu.php');
 ?>
 
 <section <?php echo "class='section hero is-$theme'"; ?> >

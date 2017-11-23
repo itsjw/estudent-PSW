@@ -71,7 +71,7 @@
 ?>
 
 <?php
-    include('menu.html');
+    include('menu.php');
 ?>
 
     <div class="counter"><p id="counter"></p></div>
