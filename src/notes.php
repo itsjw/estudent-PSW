@@ -1,3 +1,5 @@
+<?php include("php/class_lib.php"); ?>
+
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -40,7 +42,10 @@
 
             if(validateData($title, $content)) {
                 $newContent = preg_replace('/xxx/', 'yyy', $content);
-                array_push($notes,  new ExtendedNote($title, $newContent));
+                if(strcmp($title, 'bad title')) {
+                    $title = "good title";
+                }
+                array_push($notes, new ExtendedNote($title, $newContent));
                 setcookie("notes", json_encode($notes));
             }
         }
@@ -57,7 +62,7 @@
         if(empty($content)) {
             $contentErr = "pole wymagane!";
             return false;
-        } else if(strlen($content) < 20){
+        } else if(strlen($content) < 20) {
             $contentErr = "zawartosc musi zawierac conajmniej 20 znakow";
             return false;
         }
@@ -65,41 +70,9 @@
     }
 ?>
 
-<nav class="menu">
-    <ul>
-        <li>
-            Podstrony
-            <ul>
-                <li><a name="strona_glowna" href="../templates/home.html">Strona Główna</a></li>
-                <li><a href="../templates/about.html">O Nas</a></li>
-                <li>Podstrony ->
-                    <ul>
-                        <li><a href="../templates/home.html">Strona Główna</a></li>
-                        <li><a href="../templates/about.html">O Nas</a></li>
-                        <li><a href="../templates/register.html">Zarejestruj</a></li>
-                        <li><a href="../templates/css_test.html">CSS</a></li>
-                    </ul>
-                </li>
-                <li><a href="../templates/css_test.html">CSS</a></li>
-                <li><a href="../templates/notes.php">notatki</a></li>
-            </ul>
-        </li>
-        <li>Costam1</li>
-        <li>Costam2
-            <ul>
-                <li><a href="../templates/about.html">O Nas</a></li>
-                <li><a href="../templates/about.html">O Nas</a></li>
-                <li>Podstrony ->
-                    <ul>
-                        <li><a href="../templates/home.html">Strona Główna</a></li>
-                        <li><a href="../templates/about.html">O Nas</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </li>
-        <li>Costam3</li>
-    </ul>
-</nav>
+<?php
+    include('menu.html');
+?>
 
     <div class="counter"><p id="counter"></p></div>
     <div id="lucky-number"></div>
@@ -130,11 +103,19 @@
 
     <h2>Notatki: </h2>
     <div id="notes-list">
+    <?php
+    if(empty($notes)) {
+        echo "brak notatek";
+    }
+    ?>
+
 
 <?php
     define("MOJA_STALA", "wartosc nie do zmiany");
 
-    display(json_decode($_COOKIE['notes']));
+    if(isset($_COOKIE['notes'])) {
+        display(json_decode($_COOKIE['notes']));
+    }
 
     function display($notes) {
         $liczba = 1234.1234;
@@ -149,22 +130,6 @@
                 </div>
             ";
         }
-    }
-
-    class Note {
-        var $title;
-        var $content;
-        var $date;
-
-        public function __construct($title, $content) {
-            $this->title = $title;
-            $this->date = date("j, n, Y");
-            $this->content = $content;
-        }
-    }
-
-    class ExtendedNote extends Note {
-        var $extendedVariable;
     }
 
 ?>
@@ -184,7 +149,7 @@
 
     <h2>Stala: <?php echo MOJA_STALA ?></h2>
 
-    <h2>Znaki specjalne: <?php echo "&lt; &gt; &amp; &quot;" ?></h2>
+    <h2>Znaki specjalne: <?php echo "\\< &gt; &amp; &quot;" ?></h2>
 
     <a href='notes.php?die=true'>DIE</a>
 </body>

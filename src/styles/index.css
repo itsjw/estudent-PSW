@@ -1,0 +1,7 @@
+body {
+    overflow: auto;
+}
+
+.section {
+    min-height: 50rem;
+}

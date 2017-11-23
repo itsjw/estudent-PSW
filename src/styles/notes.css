@@ -17,9 +17,13 @@ body {
 
 .noteForm {
     padding: 10px;
-    border: 1px solid black;
-    border-radius: 20px;
-    text-align: center;
+    /*border: 1px solid black;*/
+    /*border-radius: 20px;*/
+    /*text-align: center;*/
+}
+
+.noteForm div {
+    padding: 10px;
 }
 
 #notes-list {
