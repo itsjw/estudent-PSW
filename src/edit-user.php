@@ -64,7 +64,7 @@ if (isset($_POST['email'])) {
     $_SESSION['fr_haslo2'] = $haslo2;
 
     require_once "php/connect.php";
-//    mysqli_report(MYSQLI_REPORT_STRICT);
+    mysqli_report(MYSQLI_REPORT_STRICT);
 
     try {
         $polaczenie = new mysqli($host, $db_user, $db_password, $db_name);
@@ -72,24 +72,41 @@ if (isset($_POST['email'])) {
             throw new Exception(mysqli_connect_errno());
         }
         else {
-            //Czy email już istnieje?
-            $rezultat = $polaczenie->query("SELECT id FROM uzytkownicy WHERE email='$email'");
+            if(!isset($actualUser)) {
+                //Czy email już istnieje?
+                $rezultat = $polaczenie->query("SELECT id FROM uzytkownicy WHERE email='$email'");
 
-            if (!$rezultat) throw new Exception($polaczenie->error);
+                if (!$rezultat) throw new Exception($polaczenie->error);
 
-            $ile_takich_maili = $rezultat->num_rows;
-            if($ile_takich_maili>0) {
-                $wszystko_OK=false;
-                $_SESSION['e_email']="Istnieje już konto przypisane do tego adresu e-mail!";
+                $ile_takich_maili = $rezultat->num_rows;
+                if ($ile_takich_maili > 0) {
+                    $wszystko_OK = false;
+                    $_SESSION['e_email'] = "Istnieje już konto przypisane do tego adresu e-mail!";
+                }
             }
 
             if ($wszystko_OK==true) {
-                if ($polaczenie->query("INSERT INTO uzytkownicy VALUES (NULL, '$imie', '$haslo1', '$email')")) {
-                    $_SESSION['udanarejestracja']=true;
-                    header('Location: login.php');
-                }
-                else {
-                    throw new Exception($polaczenie->error);
+                if(!isset($actualUser)) {
+                    if ($polaczenie->query("INSERT INTO uzytkownicy VALUES (NULL, '$imie', '$haslo1', '$email')")) {
+                        $_SESSION['udanarejestracja']=true;
+                        header('Location: login.php');
+                    } else {
+                        throw new Exception($polaczenie->error);
+                    }
+                } else {
+                    $id = $actualUser->id;
+                    if ($polaczenie->query("UPDATE uzytkownicy SET imie = '$imie', haslo = '$haslo1', email = '$email' WHERE id = $id")) {
+                        $_SESSION['user'] = serialize(new User(
+                            $id,
+                            $imie,
+                            $email,
+                            $haslo1
+                        ));
+                        header("Refresh:0");
+                        $_SESSION['udanaedycja']=true;
+                    } else {
+                        throw new Exception($polaczenie->error);
+                    }
                 }
             }
 
@@ -204,7 +221,20 @@ if(isset($actualUser)) {
         </div>
     </div>
 
-    <input class="button is-fullwidth is-info is-large" type="submit" value="Zarejestruj się" />
+    <input class="button is-fullwidth is-info is-large" type="submit" value="<?php
+    if (!isset($_SESSION['user'])) {
+        echo "Zarejestruj się";
+    } else {
+        echo "Edytuj dane";
+    }
+    ?>" />
+
+    <?php
+    if(isset($_SESSION['udanaedycja'])) {
+        echo "<span style=\"color: green\">Edycja danych przebiegła pomyślnie</span>";
+        unset($_SESSION['udanaedycja']);
+    }
+    ?>
 
 </form>
                 </div>

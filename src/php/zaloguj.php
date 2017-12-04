@@ -34,7 +34,8 @@ if ($polaczenie->connect_errno!=0) {
             $_SESSION['user'] = serialize(new User(
                 $wiersz['id'],
                 $wiersz['imie'],
-                $wiersz['email']
+                $wiersz['email'],
+                $wiersz['haslo']
             ));
 
             unset($_SESSION['blad']);

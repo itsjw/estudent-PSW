@@ -19,11 +19,13 @@ class User
     var $id;
     var $imie;
     var $email;
+    var $haslo;
 
-    public function __construct($id, $imie, $email)
+    public function __construct($id, $imie, $email, $haslo)
     {
         $this->id = $id;
         $this->imie = $imie;
         $this->email = $email;
+        $this->haslo = $haslo;
     }
 }

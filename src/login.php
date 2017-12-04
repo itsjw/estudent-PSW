@@ -39,6 +39,13 @@
                         <button class="button is-fullwidth is-info is-large">Zaloguj</button>
                         <?php if(isset($_SESSION['blad'])) echo $_SESSION['blad'] ?>
                     </form>
+                    <?php
+                    if(isset($_SESSION['udanarejestracja'])) {
+                        echo "<span style=\"color: green\">Rejestracja przebiegła pomyślnie. Można się zalogować.</span>";
+                        unset($_SESSION['udanarejestracja']);
+                    }
+                    ?>
+
                 </div>
                 <p class="has-text-grey">
                     ·&nbsp; <a href="edit-user.php">Zarejestruj się</a> &nbsp;·&nbsp;
