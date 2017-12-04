@@ -40,6 +40,9 @@
                         <?php if(isset($_SESSION['blad'])) echo $_SESSION['blad'] ?>
                     </form>
                 </div>
+                <p class="has-text-grey">
+                    ·&nbsp; <a href="edit-user.php">Zarejestruj się</a> &nbsp;·&nbsp;
+                </p>
             </div>
         </div>
     </div>

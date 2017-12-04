@@ -11,7 +11,8 @@ include("class_lib.php");
 
 $actualUser = unserialize($_SESSION['user']);
 
-$theme = $_COOKIE['__theme'];
-if(!isset($theme)) {
+if(!isset($_COOKIE['__theme'])) {
     $theme = 'light';
+} else {
+    $theme = $_COOKIE['__theme'];
 }

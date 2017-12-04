@@ -59,7 +59,7 @@ function validateData($title, $content) {
 
             <h1 class="title">Dodaj nową notatkę:</h1>
 
-            <form action="notes_list.php" method="POST" class="noteForm">
+            <form action="add_note.php" method="POST" class="noteForm">
 
                 <div class="control">
                     <input class="input" type="text" placeholder="Tytuł" autofocus>

@@ -16,12 +16,14 @@ class Note
 
 class User
 {
-    var $username;
-    var $password;
+    var $id;
+    var $imie;
+    var $email;
 
-    public function __construct($username, $password)
+    public function __construct($id, $imie, $email)
     {
-        $this->username = $username;
-        $this->password = $password;
+        $this->id = $id;
+        $this->imie = $imie;
+        $this->email = $email;
     }
 }

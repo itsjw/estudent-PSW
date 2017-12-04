@@ -4,25 +4,47 @@ session_start();
 
 require "class_lib.php";
 
-$loginy_i_hasla = array(
-    new User('janek', 'haslo123'),
-    new User('tomek', 'tajnehaslo'),
-    new User('grzegorz', 'mojehaslo')
-);
+if ((!isset($_POST['login'])) || (!isset($_POST['haslo']))) {
+    header('Location: index.php');
+    exit();
+}
 
-$login = $_POST['login'];
-$haslo = $_POST['haslo'];
+require_once "connect.php";
 
-$user = new User($login, $haslo);
+$polaczenie = @new mysqli($host, $db_user, $db_password, $db_name);
 
-if(in_array($user, $loginy_i_hasla)) {
-
-    $_SESSION['user'] = serialize($user);
-    unset($_SESSION['blad']);
-
-    header('Location: ../index.php');
+if ($polaczenie->connect_errno!=0) {
+    echo "Error: ".$polaczenie->connect_errno;
 } else {
-    $_SESSION['blad'] = '<span style="color: red">Nieprawidłowy login lub hasło</span>';
-    header('Location: ../login.php');
+    $login = $_POST['login'];
+    $haslo = $_POST['haslo'];
+
+    $login = htmlentities($login, ENT_QUOTES, "UTF-8");
+    $haslo = htmlentities($haslo, ENT_QUOTES, "UTF-8");
+
+    if ($rezultat = @$polaczenie->query(
+        sprintf("SELECT * FROM uzytkownicy WHERE email='%s' AND haslo='%s'",
+            mysqli_real_escape_string($polaczenie,$login),
+            mysqli_real_escape_string($polaczenie,$haslo)))) {
+        $ilu_userow = $rezultat->num_rows;
+        if($ilu_userow>0) {
+            $_SESSION['zalogowany'] = true;
+
+            $wiersz = $rezultat->fetch_assoc();
+            $_SESSION['user'] = serialize(new User(
+                $wiersz['id'],
+                $wiersz['imie'],
+                $wiersz['email']
+            ));
+
+            unset($_SESSION['blad']);
+            $rezultat->free_result();
+            header('Location: ../index.php');
+        } else {
+            $_SESSION['blad'] = '<span style="color:red">Nieprawidłowy login lub hasło!</span>';
+            header('Location: ../login.php');
+        }
+    }
+    $polaczenie->close();
 }
 
